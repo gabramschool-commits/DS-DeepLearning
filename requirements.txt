@@ -1,0 +1,4 @@
+# Only Jupyter Book is needed to build and preview the portfolio site.
+# It renders the outputs already saved in your notebooks — it does NOT
+# re-run your code, so you don't need PyTorch, NumPy, etc. here.
+jupyter-book>=2

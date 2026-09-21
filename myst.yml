@@ -1,0 +1,45 @@
+version: 1
+
+project:
+  title: Gabriel Mar Ramirez — Data Science Portfolio
+  description: >-
+    Deep learning experiments and data science projects built during
+    my BS Data Science studies at the University of Science and
+    Technology of Southern Philippines.
+  keywords:
+    - data-science
+    - deep-learning
+    - pytorch
+    - neural-networks
+    - jupyter-book
+  authors:
+    - name: Gabriel Mar Ramirez
+      email: ramirez.gabrielmar0815@gmail.com
+      url: https://github.com/gabramschool-commits
+  github: gabramschool-commits/ds-portfolio
+
+  # Notebooks render their saved outputs without re-execution.
+  # Run notebooks locally before committing so outputs are saved.
+
+  toc:
+    - file: index.md
+    - title: Projects
+      children:
+        - file: projects/index.md
+        - file: projects/lab02-forward-propagation.ipynb
+        - file: projects/lab03-forward-backward-propagation.ipynb
+        - file: projects/lab04-regression-pytorch.ipynb
+        - file: projects/lab05-pytorch-tensor-basics.ipynb
+        - file: projects/lab06-cnn-architecture.ipynb
+    - file: about.md
+
+site:
+  template: book-theme
+  options:
+    style: assets/custom.css
+    hide_authors: true
+  nav:
+    - title: About
+      url: /about
+    - title: GitHub
+      url: https://github.com/gabramschool-commits/
