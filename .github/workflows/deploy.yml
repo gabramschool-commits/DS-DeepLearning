@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+  # Allows you to run it manually from GitHub Actions
+  workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
@@ -14,21 +17,28 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  BASE_URL: /${{ github.event.repository.name }}
+
 jobs:
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version: 24.x
 
       - name: Install MyST Markdown
         run: npm install -g mystmd
@@ -36,10 +46,10 @@ jobs:
       - name: Build HTML
         run: myst build --html
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v4
         with:
-          path: './_build/html'
+          path: ./_build/html
 
       - name: Deploy to GitHub Pages
         id: deployment
