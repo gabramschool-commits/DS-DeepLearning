@@ -4,7 +4,6 @@ A portfolio of deep learning experiments and data science projects —
 built with [Jupyter Book 2](https://jupyterbook.org/) and published
 on GitHub Pages.
 
-**Live site →** https://gabramschool-commits.github.io/ds-portfolio/
 
 ---
 
@@ -48,8 +47,8 @@ ds-portfolio/
 ## Quick Start
 
 ```bash
-git clone https://github.com/gabramschool-commits/ds-portfolio.git
-cd ds-portfolio
+git clone https://github.com/gabramschool-commits/DS-DeepLearning.git
+cd DS-DeepLearning
 pip install jupyter-book
 jupyter book start
 ```
@@ -68,19 +67,3 @@ The site opens at `http://localhost:3000`.
 
 ---
 
-## Deployment
-
-Pushes to `main` automatically build and deploy through the GitHub
-Actions workflow in `.github/workflows/deploy.yml`.
-
-To enable GitHub Pages:
-
-1. Go to **Settings → Pages** in your repository.
-2. Under **Source**, select **GitHub Actions**.
-3. Push to `main`.
-
----
-
-## License
-
-Content and notebooks are © Gabriel Mar Ramirez.
