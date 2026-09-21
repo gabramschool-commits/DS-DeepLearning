@@ -1,13 +1,4 @@
-# ─────────────────────────────────────────────────────────
-# Jupyter Book 2 — GitHub Pages Deploy
-# Generated for ds-portfolio
-#
-# To use:
-#   1. Push this file to your repository
-#   2. Go to Settings → Pages → Source → GitHub Actions
-#   3. Push to main — the action builds and deploys
-# ─────────────────────────────────────────────────────────
-name: Jupyter Book (via myst) GitHub Pages Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -37,20 +28,18 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 18.x
 
-      - name: Install MyST
+      - name: Install MyST Markdown
         run: npm install -g mystmd
 
       - name: Build HTML
         run: myst build --html
-        env:
-          BASE_URL: /${{ github.event.repository.name }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _build/html
+          path: './_build/html'
 
       - name: Deploy to GitHub Pages
         id: deployment
