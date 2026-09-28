@@ -31,6 +31,7 @@ project:
         - file: projects/lab04-regression-pytorch.ipynb
         - file: projects/lab05-pytorch-tensor-basics.ipynb
         - file: projects/lab06-cnn-architecture.ipynb
+        - file: projects/lab07-model-inference.ipynb
     - file: about.md
 
 site:
