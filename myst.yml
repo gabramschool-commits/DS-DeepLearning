@@ -32,6 +32,7 @@ project:
         - file: projects/lab05-pytorch-tensor-basics.ipynb
         - file: projects/lab06-cnn-architecture.ipynb
         - file: projects/lab07-model-inference.ipynb
+        - file: projects/label_smoothing_blog.ipynb
     - file: about.md
 
 site:
